@@ -14,6 +14,8 @@
 		16FCAA3B1F8DB5EC00581D64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FCAA391F8DB5EC00581D64 /* LaunchScreen.storyboard */; };
 		16FCAA3E1F8DB5EC00581D64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FCAA3D1F8DB5EC00581D64 /* main.m */; };
 		16FCAA481F8DB5EC00581D64 /* SDModelDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FCAA471F8DB5EC00581D64 /* SDModelDemoTests.m */; };
+		16FCAA541F8DB60900581D64 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FCAA531F8DB60900581D64 /* Model.m */; };
+		16FCAA571F8DB73F00581D64 /* NSObject+SDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FCAA561F8DB73F00581D64 /* NSObject+SDModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		16FCAA431F8DB5EC00581D64 /* SDModelDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDModelDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FCAA471F8DB5EC00581D64 /* SDModelDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDModelDemoTests.m; sourceTree = "<group>"; };
 		16FCAA491F8DB5EC00581D64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16FCAA521F8DB60900581D64 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		16FCAA531F8DB60900581D64 /* Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		16FCAA551F8DB73F00581D64 /* NSObject+SDModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SDModel.h"; sourceTree = "<group>"; };
+		16FCAA561F8DB73F00581D64 /* NSObject+SDModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SDModel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				16FCAA2F1F8DB5EC00581D64 /* AppDelegate.m */,
 				16FCAA311F8DB5EC00581D64 /* ViewController.h */,
 				16FCAA321F8DB5EC00581D64 /* ViewController.m */,
+				16FCAA551F8DB73F00581D64 /* NSObject+SDModel.h */,
+				16FCAA561F8DB73F00581D64 /* NSObject+SDModel.m */,
+				16FCAA521F8DB60900581D64 /* Model.h */,
+				16FCAA531F8DB60900581D64 /* Model.m */,
 				16FCAA341F8DB5EC00581D64 /* Main.storyboard */,
 				16FCAA371F8DB5EC00581D64 /* Assets.xcassets */,
 				16FCAA391F8DB5EC00581D64 /* LaunchScreen.storyboard */,
@@ -206,8 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				16FCAA331F8DB5EC00581D64 /* ViewController.m in Sources */,
+				16FCAA571F8DB73F00581D64 /* NSObject+SDModel.m in Sources */,
 				16FCAA3E1F8DB5EC00581D64 /* main.m in Sources */,
 				16FCAA301F8DB5EC00581D64 /* AppDelegate.m in Sources */,
+				16FCAA541F8DB60900581D64 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
