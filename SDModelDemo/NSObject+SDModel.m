@@ -27,21 +27,51 @@
             NSArray *arr = [nameStr componentsSeparatedByString:@"_"];
             propertyName = arr[1];
         }
-        //不想在model里频繁判断，所以写这里了
-        //这里需要封装，做成通用
-        if ([propertyName isEqualToString:@"ID"]) {
-            propertyName = @"id";
-        }
-        NSString *value = dic[propertyName];
-        if ([propertyName isEqualToString:@"id"]) {
-            propertyName = @"ID";
-        }
-        //为model赋值
-        if (value.length) {
-            [model setValue:value forKey:propertyName];
+        [self sd_recursionSetValueWithDic:dic propertyName:propertyName model:model];
+        //判断字典里有没有这个key
+        if ([dic.allKeys containsObject:[propertyName lowercaseString]]) {
+            [self sd_detailSetValueWithDic:dic propertyName:propertyName model:model];
         }
     }
     return model;
+}
+
+//递归为subdic赋值
+- (void)sd_recursionSetValueWithDic:(NSDictionary *)dic propertyName:(NSString *)propertyName model:(NSObject *)model{
+    int i = 0;
+    for (id newValue in dic.allValues) {
+        i++;
+        if ([newValue isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *subDic = (NSDictionary *)newValue;
+            //dic里包含数组
+            //判断字典里有没有这个key
+            if ([subDic.allKeys containsObject:propertyName]) {
+                [self sd_detailSetValueWithDic:subDic propertyName:propertyName model:model];
+            }
+            else {
+                //go on
+                [self sd_recursionSetValueWithDic:subDic propertyName:propertyName model:model];
+                break;
+            }
+        }
+        else{
+            if (dic.allKeys.count == i) {
+                break;
+            }
+        }
+    }
+}
+
+- (void)sd_detailSetValueWithDic:(NSDictionary *)dic propertyName:(NSString *)propertyName model:(NSObject *)model {
+    NSString *value = dic[propertyName];
+    //为model赋值
+    if (value.length) {
+        [model setValue:value forKey:propertyName];
+    }
+    else{
+        //没有拿到value
+        NSLog(@"%@",propertyName);
+    }
 }
 
 @end

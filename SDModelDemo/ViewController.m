@@ -19,13 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSDictionary *dic = @{
-                          @"id":@"0",
+                      @"data":@{@"firstName":@"sun",@"secondName":@"dan",@"subData":@{@"eeName":@"sun",@"ddName":@"april"}},
+                          @"id":@"100",
                           @"name":@"suapri",
                           @"age":@"18",
                           @"sex":@"female",
                           @"address":@"BeiJing",
                           @"height":@"160cm",
-                          @"weight":@"90"
+                          @"weight":@"90",
+                          @"workAddress":@"wangjing"
                           };
     __unused Model *model = [Model sd_setModelWithDic:dic];
     

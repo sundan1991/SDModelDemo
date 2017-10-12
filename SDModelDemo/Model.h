@@ -16,7 +16,10 @@
 @property (nonatomic, copy) NSString  *address;
 @property (nonatomic, copy) NSString  *height;
 @property (nonatomic, copy) NSString  *weight;
-@property (nonatomic, copy) NSString  *ID;
-
+@property (nonatomic, copy) NSString  *id;//需要优化，兼容大小写不同的对象赋值
+@property (nonatomic, copy) NSString  *firstName;
+@property (nonatomic, copy) NSString  *secondName;
+@property (nonatomic, copy) NSString  *eeName;
+@property (nonatomic, copy) NSString  *ddName;
 
 @end
